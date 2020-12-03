@@ -19,4 +19,4 @@ slopes.forEach((slope, i) => {
     treesProduct = i === 0 ? trees : treesProduct *= trees;
 });
 
-console.log(treesProduct);
+console.log('Result: ' + treesProduct);

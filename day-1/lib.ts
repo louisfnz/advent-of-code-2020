@@ -1,17 +1,17 @@
 export const findTwo = (entries: number[], target: number): [number, number] | void => {
-    for (let i = 0; i < entries.length; i++) {
-        const targetIndex = entries.indexOf(target - entries[i]);
+    for (const entry of entries) {
+        const targetIndex = entries.indexOf(target - entry);
         if (targetIndex > -1) {
-            return [entries[i], entries[targetIndex]];
+            return [entry, entries[targetIndex]];
         }
     }
 }
 
 export const findThree = (entries: number[], target: number): [number, number, number] | void => {
-    for (let i = 0; i < entries.length; i++) {
-        const two = findTwo(entries, target - entries[i]);
-        if (two && two[0] !== two[1] && !two.includes(entries[i])) {
-            return [...two, entries[i]];
+    for (const entry of entries) {
+        const two = findTwo(entries, target - entry);
+        if (two && two[0] !== two[1] && !two.includes(entry)) {
+            return [...two, entry];
         }
     }
 }
