@@ -1,7 +1,7 @@
 import {readFileSync} from 'fs';
-import {adjustRowLength, countTrees, Slope} from "./lib";
+import {adjustRowLength, countTrees, Vector} from "./lib";
 
-const slopes: Slope[] = [
+const slopes: Vector[] = [
     [1, 1],
     [3, 1],
     [5, 1],

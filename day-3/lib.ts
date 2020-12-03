@@ -1,6 +1,6 @@
-export type Slope = [number, number];
+export type Vector = [number, number];
 
-export const adjustRowLength = (row: string, index: number, slope: Slope): string => {
+export const adjustRowLength = (row: string, index: number, slope: Vector): string => {
     const requiredRowLength = index === 0 ? slope[0] : Math.ceil(((index * slope[0]) + 1) / slope[1]);
     if (row.length < requiredRowLength) {
         const duplicates = Math.ceil(requiredRowLength / row.length);
@@ -13,7 +13,7 @@ export const adjustRowLength = (row: string, index: number, slope: Slope): strin
     return row;
 };
 
-export const countTrees = (rows: string[], slope: Slope): number => {
+export const countTrees = (rows: string[], slope: Vector): number => {
     let trees = 0;
     for (let i = slope[1]; i < rows.length; i += slope[1]) {
         const rowIndex = ((slope[0] * (i + 1)) - slope[0]) / slope[1];
